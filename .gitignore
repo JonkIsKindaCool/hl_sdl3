@@ -1,0 +1,4 @@
+project/binaries
+project/obj
+.vscode
+.clang-format

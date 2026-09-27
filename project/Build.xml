@@ -1,0 +1,1231 @@
+<xml>
+    <set name="SDL3_ROOT" value="libs/sdl3" unless="SDL3_ROOT" />
+    <set name="SDL3_INCLUDE" value="${SDL3_ROOT}/include" />
+    <set name="SDL3_SRC" value="${SDL3_ROOT}/src" />
+
+    <set name="HL_ROOT" value="libs/hashlink" />
+    <set name="HL_SRC" value="${HL_ROOT}/src" />
+    <set name="HL_INCLUDE" value="${HL_ROOT}/src" />
+
+    <files id="sdl3">
+        <compilerflag value="-I${SDL3_INCLUDE}/build_config" />
+        <compilerflag value="-I${SDL3_INCLUDE}" />
+        <compilerflag value="-I${SDL3_SRC}" />
+        <compilerflag value="-I${SDL3_SRC}/video/khronos" />
+        <compilerflag value="-Ilibs/custom/src" />
+
+        <file name="${SDL3_SRC}/SDL.c" />
+        <file name="${SDL3_SRC}/SDL_assert.c" />
+        <file name="${SDL3_SRC}/SDL_error.c" />
+        <file name="${SDL3_SRC}/SDL_guid.c" />
+        <file name="${SDL3_SRC}/SDL_hashtable.c" />
+        <file name="${SDL3_SRC}/SDL_hints.c" />
+        <file name="${SDL3_SRC}/SDL_list.c" />
+        <file name="${SDL3_SRC}/SDL_log.c" />
+        <file name="${SDL3_SRC}/SDL_properties.c" />
+        <file name="${SDL3_SRC}/SDL_utils.c" />
+        <file name="${SDL3_SRC}/atomic/SDL_atomic.c" />
+        <file name="${SDL3_SRC}/atomic/SDL_spinlock.c" />
+        <file name="${SDL3_SRC}/audio/SDL_audio.c" />
+        <file name="${SDL3_SRC}/audio/SDL_audiocvt.c" />
+        <file name="${SDL3_SRC}/audio/SDL_audiodev.c" />
+        <file name="${SDL3_SRC}/audio/SDL_audioqueue.c" />
+        <file name="${SDL3_SRC}/audio/SDL_audioresample.c" />
+        <file name="${SDL3_SRC}/audio/SDL_audiotypecvt.c" />
+        <file name="${SDL3_SRC}/audio/SDL_mixer.c" />
+        <file name="${SDL3_SRC}/audio/SDL_wave.c" />
+        <file name="${SDL3_SRC}/camera/SDL_camera.c" />
+        <file name="${SDL3_SRC}/cpuinfo/SDL_cpuinfo.c" />
+
+        <file name="${SDL3_SRC}/dynapi/SDL_dynapi.c" />
+        <file name="libs/custom/src/sdl_dynapi_stubs.c" />
+
+        <file name="${SDL3_SRC}/events/SDL_clipboardevents.c" />
+        <file name="${SDL3_SRC}/events/SDL_displayevents.c" />
+        <file name="${SDL3_SRC}/events/SDL_dropevents.c" />
+        <file name="${SDL3_SRC}/events/SDL_events.c" />
+        <file name="${SDL3_SRC}/events/SDL_eventwatch.c" />
+        <file name="${SDL3_SRC}/events/SDL_keyboard.c" />
+        <file name="${SDL3_SRC}/events/SDL_keymap.c" />
+        <file name="${SDL3_SRC}/events/SDL_keysym_to_keycode.c" />
+        <file name="${SDL3_SRC}/events/SDL_keysym_to_scancode.c" />
+        <file name="${SDL3_SRC}/events/SDL_mouse.c" />
+        <file name="${SDL3_SRC}/events/SDL_pen.c" />
+        <file name="${SDL3_SRC}/events/SDL_quit.c" />
+        <file name="${SDL3_SRC}/events/SDL_scancode_tables.c" />
+        <file name="${SDL3_SRC}/events/SDL_touch.c" />
+        <file name="${SDL3_SRC}/events/SDL_windowevents.c" />
+        <file name="${SDL3_SRC}/events/imKStoUCS.c" />
+        <file name="${SDL3_SRC}/filesystem/SDL_filesystem.c" />
+        <file name="${SDL3_SRC}/filesystem/posix/SDL_sysfsops.c" />
+        <file name="${SDL3_SRC}/gpu/SDL_gpu.c" />
+        <file name="${SDL3_SRC}/haptic/SDL_haptic.c" />
+        <file name="${SDL3_SRC}/haptic/hidapi/SDL_hidapihaptic.c" />
+        <file name="${SDL3_SRC}/haptic/hidapi/SDL_hidapihaptic_lg4ff.c" />
+        <file name="${SDL3_SRC}/hidapi/SDL_hidapi.c" />
+        <file name="${SDL3_SRC}/io/SDL_asyncio.c" />
+        <file name="${SDL3_SRC}/io/SDL_iostream.c" />
+        <file name="${SDL3_SRC}/io/generic/SDL_asyncio_generic.c" />
+        <file name="${SDL3_SRC}/joystick/SDL_joystick.c" />
+        <file name="${SDL3_SRC}/joystick/SDL_gamepad.c" />
+        <file name="${SDL3_SRC}/joystick/SDL_steam_virtual_gamepad.c" />
+        <file name="${SDL3_SRC}/joystick/controller_type.c" />
+        <file name="${SDL3_SRC}/joystick/virtual/SDL_virtualjoystick.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_report_descriptor.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapijoystick.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_rumble.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_gamecube.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_gip.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_switch.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_luna.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_ps3.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_ps4.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_ps5.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_shield.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_stadia.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_steam.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_steamdeck.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_wii.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_xbox360.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_xboxone.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_steam_hori.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_steam_triton.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_xbox360w.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_lg4ff.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_8bitdo.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_flydigi.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_sinput.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_zuiki.c" />
+        <file name="${SDL3_SRC}/joystick/hidapi/SDL_hidapi_combined.c" />
+        <file name="${SDL3_SRC}/locale/SDL_locale.c" />
+        <file name="${SDL3_SRC}/main/SDL_main_callbacks.c" />
+        <file name="${SDL3_SRC}/main/SDL_runapp.c" />
+        <file name="${SDL3_SRC}/misc/SDL_url.c" />
+        <file name="${SDL3_SRC}/misc/SDL_libusb.c" />
+        <file name="${SDL3_SRC}/power/SDL_power.c" />
+        <file name="${SDL3_SRC}/process/SDL_process.c" />
+        <file name="${SDL3_SRC}/render/SDL_render.c" />
+        <file name="${SDL3_SRC}/render/SDL_render_unsupported.c" />
+        <file name="${SDL3_SRC}/render/SDL_yuv_sw.c" />
+        <file name="${SDL3_SRC}/render/software/SDL_render_sw.c" />
+        <file name="${SDL3_SRC}/render/software/SDL_blendfillrect.c" />
+        <file name="${SDL3_SRC}/render/software/SDL_blendline.c" />
+        <file name="${SDL3_SRC}/render/software/SDL_blendpoint.c" />
+        <file name="${SDL3_SRC}/render/software/SDL_drawline.c" />
+        <file name="${SDL3_SRC}/render/software/SDL_drawpoint.c" />
+        <file name="${SDL3_SRC}/render/software/SDL_triangle.c" />
+        <file name="${SDL3_SRC}/render/opengl/SDL_render_gl.c" />
+        <file name="${SDL3_SRC}/render/opengl/SDL_shaders_gl.c" />
+        <file name="${SDL3_SRC}/render/opengles2/SDL_render_gles2.c" />
+        <file name="${SDL3_SRC}/render/opengles2/SDL_shaders_gles2.c" />
+        <file name="${SDL3_SRC}/render/vulkan/SDL_render_vulkan.c" />
+        <file name="${SDL3_SRC}/render/vulkan/SDL_shaders_vulkan.c" />
+        <file name="${SDL3_SRC}/render/direct3d/SDL_render_d3d.c" />
+        <file name="${SDL3_SRC}/render/direct3d/SDL_shaders_d3d.c" />
+        <file name="${SDL3_SRC}/render/direct3d11/SDL_render_d3d11.c" />
+        <file name="${SDL3_SRC}/render/direct3d11/SDL_shaders_d3d11.c" />
+        <file name="${SDL3_SRC}/render/direct3d12/SDL_render_d3d12.c" />
+        <file name="${SDL3_SRC}/render/direct3d12/SDL_shaders_d3d12.c" />
+        <file name="${SDL3_SRC}/render/gpu/SDL_render_gpu.c" />
+        <file name="${SDL3_SRC}/render/gpu/SDL_pipeline_gpu.c" />
+        <file name="${SDL3_SRC}/render/gpu/SDL_shaders_gpu.c" />
+        <file name="${SDL3_SRC}/sensor/SDL_sensor.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_malloc.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_murmur3.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_memset.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_memcpy.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_memmove.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_crc16.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_crc32.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_stdlib.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_string.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_strtokr.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_getenv.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_iconv.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_qsort.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_mslibc.c" />
+        <file name="${SDL3_SRC}/stdlib/SDL_random.c" />
+        <file name="${SDL3_SRC}/storage/SDL_storage.c" />
+        <file name="${SDL3_SRC}/storage/generic/SDL_genericstorage.c" />
+        <file name="${SDL3_SRC}/storage/steam/SDL_steamstorage.c" />
+        <file name="${SDL3_SRC}/thread/SDL_thread.c" />
+        <file name="${SDL3_SRC}/time/SDL_time.c" />
+        <file name="${SDL3_SRC}/timer/SDL_timer.c" />
+        <file name="${SDL3_SRC}/dialog/SDL_dialog.c" />
+        <file name="${SDL3_SRC}/dialog/SDL_dialog_utils.c" />
+        <file name="${SDL3_SRC}/tray/SDL_tray_utils.c" />
+
+        <file name="${SDL3_SRC}/libm/e_atan2.c" />
+        <file name="${SDL3_SRC}/libm/e_exp.c" />
+        <file name="${SDL3_SRC}/libm/e_fmod.c" />
+        <file name="${SDL3_SRC}/libm/e_log.c" />
+        <file name="${SDL3_SRC}/libm/e_log10.c" />
+        <file name="${SDL3_SRC}/libm/e_pow.c" />
+        <file name="${SDL3_SRC}/libm/e_rem_pio2.c" />
+        <file name="${SDL3_SRC}/libm/e_sqrt.c" />
+        <file name="${SDL3_SRC}/libm/k_cos.c" />
+        <file name="${SDL3_SRC}/libm/k_rem_pio2.c" />
+        <file name="${SDL3_SRC}/libm/k_sin.c" />
+        <file name="${SDL3_SRC}/libm/k_tan.c" />
+        <file name="${SDL3_SRC}/libm/s_atan.c" />
+        <file name="${SDL3_SRC}/libm/s_copysign.c" />
+        <file name="${SDL3_SRC}/libm/s_cos.c" />
+        <file name="${SDL3_SRC}/libm/s_fabs.c" />
+        <file name="${SDL3_SRC}/libm/s_floor.c" />
+        <file name="${SDL3_SRC}/libm/s_modf.c" />
+        <file name="${SDL3_SRC}/libm/s_scalbn.c" />
+        <file name="${SDL3_SRC}/libm/s_sin.c" />
+        <file name="${SDL3_SRC}/libm/s_tan.c" />
+
+        <file name="${SDL3_SRC}/video/SDL_stb.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit_0.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit_1.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit_A.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit_N.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit_auto.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit_copy.c" />
+        <file name="${SDL3_SRC}/video/SDL_blit_slow.c" />
+        <file name="${SDL3_SRC}/video/SDL_bmp.c" />
+        <file name="${SDL3_SRC}/video/SDL_clipboard.c" />
+        <file name="${SDL3_SRC}/video/SDL_egl.c" />
+        <file name="${SDL3_SRC}/video/SDL_fillrect.c" />
+        <file name="${SDL3_SRC}/video/SDL_pixels.c" />
+        <file name="${SDL3_SRC}/video/SDL_rect.c" />
+        <file name="${SDL3_SRC}/video/SDL_RLEaccel.c" />
+        <file name="${SDL3_SRC}/video/SDL_rotate.c" />
+        <file name="${SDL3_SRC}/video/SDL_stretch.c" />
+        <file name="${SDL3_SRC}/video/SDL_surface.c" />
+        <file name="${SDL3_SRC}/video/SDL_video.c" />
+        <file name="${SDL3_SRC}/video/SDL_video_unsupported.c" />
+        <file name="${SDL3_SRC}/video/SDL_vulkan_utils.c" />
+        <file name="${SDL3_SRC}/video/SDL_yuv.c" />
+        <file name="${SDL3_SRC}/video/yuv2rgb/yuv_rgb_std.c" />
+        <file name="${SDL3_SRC}/video/yuv2rgb/yuv_rgb_sse.c" />
+        <file name="${SDL3_SRC}/video/yuv2rgb/yuv_rgb_lsx.c" />
+        <file name="${SDL3_SRC}/video/dummy/SDL_nullvideo.c" />
+        <file name="${SDL3_SRC}/video/dummy/SDL_nullevents.c" />
+        <file name="${SDL3_SRC}/video/dummy/SDL_nullframebuffer.c" />
+        <file name="${SDL3_SRC}/audio/dummy/SDL_dummyaudio.c" />
+        <file name="${SDL3_SRC}/audio/disk/SDL_diskaudio.c" />
+        <file name="${SDL3_SRC}/camera/dummy/SDL_camera_dummy.c" />
+        <file name="${SDL3_SRC}/sensor/dummy/SDL_dummysensor.c" />
+
+        <section if="windows">
+            <compilerflag value="-DHAVE_DSOUND_H" />
+            <compilerflag value="-DHAVE_DINPUT_H" />
+            <compilerflag value="-D_CRT_SECURE_NO_DEPRECATE" />
+            <compilerflag value="-D_CRT_NONSTDC_NO_DEPRECATE" />
+            <compilerflag value="-D_CRT_SECURE_NO_WARNINGS" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DSOUND" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_WASAPI" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DISK" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_WINDOWS" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_OFFSCREEN" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_D3D" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_D3D11" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_D3D12" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_WGL" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_OGL" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_EGL" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_ES2" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_OGL_ES2" />
+            <compilerflag value="-DSDL_VIDEO_VULKAN" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_VULKAN" />
+            <compilerflag value="-DSDL_GPU_D3D12" />
+            <compilerflag value="-DSDL_GPU_VULKAN" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_GPU" />
+            <compilerflag value="-DSDL_JOYSTICK_DINPUT" />
+            <compilerflag value="-DSDL_JOYSTICK_RAWINPUT" />
+            <compilerflag value="-DSDL_JOYSTICK_WGI" />
+            <compilerflag value="-DSDL_JOYSTICK_GAMEINPUT" />
+            <compilerflag value="-DSDL_JOYSTICK_XINPUT" />
+            <compilerflag value="-DSDL_JOYSTICK_HIDAPI" />
+            <compilerflag value="-DSDL_HIDAPI_JOYSTICK" />
+            <compilerflag value="-DSDL_VIRTUAL_JOYSTICK" />
+            <compilerflag value="-DSDL_HAPTIC_DINPUT" />
+            <compilerflag value="-DSDL_SENSOR_WINDOWS" />
+            <compilerflag value="-DSDL_LOADSO_WINDOWS" />
+            <compilerflag value="-DSDL_THREAD_WINDOWS" />
+            <compilerflag value="-DSDL_THREAD_GENERIC_COND_SUFFIX" />
+            <compilerflag value="-DSDL_THREAD_GENERIC_RWLOCK_SUFFIX" />
+            <compilerflag value="-DSDL_TIMER_WINDOWS" />
+            <compilerflag value="-DSDL_TIME_WINDOWS" />
+            <compilerflag value="-DSDL_FILESYSTEM_WINDOWS" />
+            <compilerflag value="-DSDL_FSOPS_WINDOWS" />
+            <compilerflag value="-DSDL_POWER_WINDOWS" />
+            <compilerflag value="-DSDL_PROCESS_WINDOWS" />
+            <file name="${SDL3_SRC}/joystick/gdk/SDL_gameinputjoystick.cpp" />
+            <file name="${SDL3_SRC}/core/windows/SDL_windows.c" />
+            <file name="${SDL3_SRC}/core/windows/SDL_hid.c" />
+            <file name="${SDL3_SRC}/core/windows/SDL_immdevice.c" />
+            <file name="${SDL3_SRC}/core/windows/SDL_xinput.c" />
+            <file name="${SDL3_SRC}/core/windows/SDL_gameinput.cpp" />
+            <file name="${SDL3_SRC}/camera/mediafoundation/SDL_camera_mediafoundation.c" />
+            <file name="${SDL3_SRC}/main/windows/SDL_sysmain_runapp.c" />
+            <file name="${SDL3_SRC}/main/generic/SDL_sysmain_callbacks.c" />
+            <file name="${SDL3_SRC}/io/windows/SDL_asyncio_windows_ioring.c" />
+            <file name="${SDL3_SRC}/thread/windows/SDL_syscond_cv.c" />
+            <file name="${SDL3_SRC}/thread/windows/SDL_sysmutex.c" />
+            <file name="${SDL3_SRC}/thread/windows/SDL_sysrwlock_srw.c" />
+            <file name="${SDL3_SRC}/thread/windows/SDL_syssem.c" />
+            <file name="${SDL3_SRC}/thread/windows/SDL_systhread.c" />
+            <file name="${SDL3_SRC}/thread/windows/SDL_systls.c" />
+            <file name="${SDL3_SRC}/thread/generic/SDL_syscond.c" />
+            <file name="${SDL3_SRC}/thread/generic/SDL_sysrwlock.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsclipboard.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsevents.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsframebuffer.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowskeyboard.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsmessagebox.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsmodes.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsmouse.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsopengl.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsopengles.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsrawinput.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsshape.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsvideo.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsvulkan.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowswindow.c" />
+            <file name="${SDL3_SRC}/video/windows/SDL_windowsgameinput.cpp" />
+            <file name="${SDL3_SRC}/audio/wasapi/SDL_wasapi.c" />
+            <file name="${SDL3_SRC}/audio/directsound/SDL_directsound.c" />
+            <file name="${SDL3_SRC}/gpu/d3d12/SDL_gpu_d3d12.c" />
+            <file name="${SDL3_SRC}/gpu/vulkan/SDL_gpu_vulkan.c" />
+            <file name="${SDL3_SRC}/joystick/windows/SDL_windowsjoystick.c" />
+            <file name="${SDL3_SRC}/joystick/windows/SDL_dinputjoystick.c" />
+            <file name="${SDL3_SRC}/joystick/windows/SDL_xinputjoystick.c" />
+            <file name="${SDL3_SRC}/joystick/windows/SDL_rawinputjoystick.c" />
+            <file name="${SDL3_SRC}/joystick/windows/SDL_windows_gaming_input.c" />
+            <file name="${SDL3_SRC}/haptic/windows/SDL_windowshaptic.c" />
+            <file name="${SDL3_SRC}/haptic/windows/SDL_dinputhaptic.c" />
+            <file name="${SDL3_SRC}/sensor/windows/SDL_windowssensor.c" />
+            <file name="${SDL3_SRC}/power/windows/SDL_syspower.c" />
+            <file name="${SDL3_SRC}/filesystem/windows/SDL_sysfilesystem.c" />
+            <file name="${SDL3_SRC}/filesystem/windows/SDL_sysfsops.c" />
+            <file name="${SDL3_SRC}/timer/windows/SDL_systimer.c" />
+            <file name="${SDL3_SRC}/time/windows/SDL_systime.c" />
+            <file name="${SDL3_SRC}/loadso/windows/SDL_sysloadso.c" />
+            <file name="${SDL3_SRC}/misc/windows/SDL_sysurl.c" />
+            <file name="${SDL3_SRC}/locale/windows/SDL_syslocale.c" />
+            <file name="${SDL3_SRC}/process/windows/SDL_windowsprocess.c" />
+            <file name="${SDL3_SRC}/tray/windows/SDL_tray.c" />
+            <file name="${SDL3_SRC}/dialog/windows/SDL_windowsdialog.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenevents.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenframebuffer.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenopengles.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvideo.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvulkan.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenwindow.c" />
+        </section>
+
+        <section if="linux">
+            <compilerflag value="-DSDL_LIBC" />
+            <compilerflag value="-D_GNU_SOURCE" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_X11" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_OFFSCREEN" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_ALSA" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DISK" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_GLX" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_OGL" />
+            <compilerflag value="-DSDL_VIDEO_VULKAN" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_VULKAN" />
+            <compilerflag value="-DSDL_GPU_VULKAN" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_GPU" />
+            <compilerflag value="-DSDL_JOYSTICK_LINUX" />
+            <compilerflag value="-DSDL_JOYSTICK_HIDAPI" />
+            <compilerflag value="-DSDL_HIDAPI_JOYSTICK" />
+            <compilerflag value="-DSDL_VIRTUAL_JOYSTICK" />
+            <compilerflag value="-DSDL_HAPTIC_LINUX" />
+            <compilerflag value="-DSDL_CAMERA_DRIVER_V4L2" />
+            <compilerflag value="-DSDL_SENSOR_DUMMY" />
+            <compilerflag value="-DSDL_LOADSO_DLOPEN" />
+            <compilerflag value="-DSDL_THREAD_PTHREAD" />
+            <compilerflag value="-DSDL_PTHREADS_SEM" />
+            <compilerflag value="-DSDL_TIMER_UNIX" />
+            <compilerflag value="-DSDL_TIME_UNIX" />
+            <compilerflag value="-DSDL_FILESYSTEM_UNIX" />
+            <compilerflag value="-DSDL_FSOPS_POSIX" />
+            <compilerflag value="-DSDL_STORAGE_GENERIC" />
+            <compilerflag value="-DSDL_STORAGE_STEAM" />
+            <compilerflag value="-DSDL_POWER_LINUX" />
+            <compilerflag value="-DSDL_PROCESS_POSIX" />
+            <file name="${SDL3_SRC}/core/unix/SDL_appid.c" />
+            <file name="${SDL3_SRC}/core/unix/SDL_poll.c" />
+            <file name="${SDL3_SRC}/core/unix/SDL_gtk.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_evdev.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_evdev_kbd.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_evdev_capabilities.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_udev.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_dbus.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_ibus.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_fcitx.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_ime.c" />
+            <file name="${SDL3_SRC}/core/linux/SDL_threadprio.c" />
+            <file name="${SDL3_SRC}/main/generic/SDL_sysmain_callbacks.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syscond.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysmutex.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysrwlock.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syssem.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systhread.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systls.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11clipboard.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11dyn.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11events.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11framebuffer.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11keyboard.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11messagebox.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11modes.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11mouse.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11opengl.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11opengles.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11pen.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11settings.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11shape.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11toolkit.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11touch.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11video.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11vulkan.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11window.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11xfixes.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11xinput2.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11xsync.c" />
+            <file name="${SDL3_SRC}/video/x11/SDL_x11xtest.c" />
+            <file name="${SDL3_SRC}/video/x11/edid-parse.c" />
+            <file name="${SDL3_SRC}/video/x11/xsettings-client.c" />
+            <file name="${SDL3_SRC}/audio/alsa/SDL_alsa_audio.c" />
+            <file name="${SDL3_SRC}/gpu/vulkan/SDL_gpu_vulkan.c" />
+            <file name="${SDL3_SRC}/joystick/linux/SDL_sysjoystick.c" />
+            <file name="${SDL3_SRC}/haptic/linux/SDL_syshaptic.c" />
+            <file name="${SDL3_SRC}/camera/v4l2/SDL_camera_v4l2.c" />
+            <file name="${SDL3_SRC}/power/linux/SDL_syspower.c" />
+            <file name="${SDL3_SRC}/filesystem/unix/SDL_sysfilesystem.c" />
+            <file name="${SDL3_SRC}/timer/unix/SDL_systimer.c" />
+            <file name="${SDL3_SRC}/time/unix/SDL_systime.c" />
+            <file name="${SDL3_SRC}/loadso/dlopen/SDL_sysloadso.c" />
+            <file name="${SDL3_SRC}/misc/unix/SDL_sysurl.c" />
+            <file name="${SDL3_SRC}/locale/unix/SDL_syslocale.c" />
+            <file name="${SDL3_SRC}/process/posix/SDL_posixprocess.c" />
+            <file name="${SDL3_SRC}/tray/unix/SDL_tray.c" />
+            <file name="${SDL3_SRC}/dialog/unix/SDL_unixdialog.c" />
+            <file name="${SDL3_SRC}/dialog/unix/SDL_portaldialog.c" />
+            <file name="${SDL3_SRC}/dialog/unix/SDL_zenitydialog.c" />
+            <file name="${SDL3_SRC}/dialog/unix/SDL_zenitymessagebox.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenevents.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenframebuffer.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenopengles.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvideo.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvulkan.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenwindow.c" />
+        </section>
+
+        <section if="mac">
+            <compilerflag value="-DSDL_LIBC" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_COCOA" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_OFFSCREEN" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_COREAUDIO" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DISK" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_CGL" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_OGL" />
+            <compilerflag value="-DSDL_VIDEO_VULKAN" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_VULKAN" />
+            <compilerflag value="-DSDL_VIDEO_METAL" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_METAL" />
+            <compilerflag value="-DSDL_GPU_METAL" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_GPU" />
+            <compilerflag value="-DSDL_JOYSTICK_MFI" />
+            <compilerflag value="-DSDL_JOYSTICK_IOKIT" />
+            <compilerflag value="-DSDL_JOYSTICK_HIDAPI" />
+            <compilerflag value="-DSDL_HIDAPI_JOYSTICK" />
+            <compilerflag value="-DSDL_VIRTUAL_JOYSTICK" />
+            <compilerflag value="-DSDL_HAPTIC_IOKIT" />
+            <compilerflag value="-DSDL_CAMERA_DRIVER_COREMEDIA" />
+            <compilerflag value="-DSDL_SENSOR_DUMMY" />
+            <compilerflag value="-DSDL_LOADSO_DLOPEN" />
+            <compilerflag value="-DSDL_THREAD_PTHREAD" />
+            <compilerflag value="-DSDL_TIMER_UNIX" />
+            <compilerflag value="-DSDL_TIME_UNIX" />
+            <compilerflag value="-DSDL_FILESYSTEM_COCOA" />
+            <compilerflag value="-DSDL_FSOPS_POSIX" />
+            <compilerflag value="-DSDL_STORAGE_GENERIC" />
+            <compilerflag value="-DSDL_STORAGE_STEAM" />
+            <compilerflag value="-DSDL_POWER_MACOSX" />
+            <compilerflag value="-DSDL_PROCESS_POSIX" />
+            <file name="${SDL3_SRC}/main/generic/SDL_sysmain_callbacks.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syscond.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysmutex.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysrwlock.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syssem.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systhread.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systls.c" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoaclipboard.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoaevents.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoakeyboard.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoamessagebox.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoametalview.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoamodes.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoamouse.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoaopengl.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoaopengles.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoapen.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoashape.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoavideo.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoavulkan.m" />
+            <file name="${SDL3_SRC}/video/cocoa/SDL_cocoawindow.m" />
+            <file name="${SDL3_SRC}/audio/coreaudio/SDL_coreaudio.m" />
+            <file name="${SDL3_SRC}/gpu/metal/SDL_gpu_metal.m" />
+            <file name="${SDL3_SRC}/joystick/apple/SDL_mfijoystick.m" />
+            <file name="${SDL3_SRC}/joystick/darwin/SDL_iokitjoystick.c" />
+            <file name="${SDL3_SRC}/haptic/darwin/SDL_syshaptic.c" />
+            <file name="${SDL3_SRC}/camera/coremedia/SDL_camera_coremedia.m" />
+            <file name="${SDL3_SRC}/power/macos/SDL_syspower.c" />
+            <file name="${SDL3_SRC}/filesystem/cocoa/SDL_sysfilesystem.m" />
+            <file name="${SDL3_SRC}/timer/unix/SDL_systimer.c" />
+            <file name="${SDL3_SRC}/time/unix/SDL_systime.c" />
+            <file name="${SDL3_SRC}/loadso/dlopen/SDL_sysloadso.c" />
+            <file name="${SDL3_SRC}/misc/macos/SDL_sysurl.m" />
+            <file name="${SDL3_SRC}/locale/macos/SDL_syslocale.m" />
+            <file name="${SDL3_SRC}/process/posix/SDL_posixprocess.c" />
+            <file name="${SDL3_SRC}/tray/cocoa/SDL_tray.m" />
+            <file name="${SDL3_SRC}/dialog/cocoa/SDL_cocoadialog.m" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenevents.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenframebuffer.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenopengles.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvideo.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvulkan.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenwindow.c" />
+            <file name="${SDL3_SRC}/render/metal/SDL_render_metal.m" />
+        </section>
+
+        <section if="ios">
+            <compilerflag value="-DSDL_LIBC" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_UIKIT" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_OFFSCREEN" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_COREAUDIO" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DISK" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_ES2" />
+            <compilerflag value="-DSDL_VIDEO_OPENGLES" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_OGL_ES2" />
+            <compilerflag value="-DSDL_VIDEO_METAL" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_METAL" />
+            <compilerflag value="-DSDL_GPU_METAL" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_GPU" />
+            <compilerflag value="-DSDL_JOYSTICK_MFI" />
+            <compilerflag value="-DSDL_JOYSTICK_HIDAPI" />
+            <compilerflag value="-DSDL_HIDAPI_JOYSTICK" />
+            <compilerflag value="-DSDL_VIRTUAL_JOYSTICK" />
+            <compilerflag value="-DSDL_HAPTIC_DUMMY" />
+            <compilerflag value="-DSDL_SENSOR_COREMOTION" />
+            <compilerflag value="-DSDL_CAMERA_DRIVER_COREMEDIA" />
+            <compilerflag value="-DSDL_LOADSO_DLOPEN" />
+            <compilerflag value="-DSDL_THREAD_PTHREAD" />
+            <compilerflag value="-DSDL_TIMER_UNIX" />
+            <compilerflag value="-DSDL_TIME_UNIX" />
+            <compilerflag value="-DSDL_FILESYSTEM_COCOA" />
+            <compilerflag value="-DSDL_FSOPS_POSIX" />
+            <compilerflag value="-DSDL_STORAGE_GENERIC" />
+            <compilerflag value="-DSDL_POWER_UIKIT" />
+            <compilerflag value="-DSDL_PROCESS_POSIX" />
+            <file name="${SDL3_SRC}/main/ios/SDL_sysmain_callbacks.m" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syscond.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysmutex.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysrwlock.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syssem.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systhread.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systls.c" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitappdelegate.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitclipboard.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitevents.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitmessagebox.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitmetalview.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitmodes.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitopengles.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitopenglview.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitpen.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitvideo.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitview.m" />
+            <file name="${SDL3_SRC}/video/uikit/SDL_uikitviewcontroller.m" />
+            <file name="${SDL3_SRC}/audio/coreaudio/SDL_coreaudio.m" />
+            <file name="${SDL3_SRC}/gpu/metal/SDL_gpu_metal.m" />
+            <file name="${SDL3_SRC}/joystick/apple/SDL_mfijoystick.m" />
+            <file name="${SDL3_SRC}/haptic/dummy/SDL_syshaptic.c" />
+            <file name="${SDL3_SRC}/sensor/coremotion/SDL_coremotionsensor.m" />
+            <file name="${SDL3_SRC}/camera/coremedia/SDL_camera_coremedia.m" />
+            <file name="${SDL3_SRC}/power/uikit/SDL_syspower.m" />
+            <file name="${SDL3_SRC}/filesystem/cocoa/SDL_sysfilesystem.m" />
+            <file name="${SDL3_SRC}/timer/unix/SDL_systimer.c" />
+            <file name="${SDL3_SRC}/time/unix/SDL_systime.c" />
+            <file name="${SDL3_SRC}/loadso/dlopen/SDL_sysloadso.c" />
+            <file name="${SDL3_SRC}/misc/ios/SDL_sysurl.m" />
+            <file name="${SDL3_SRC}/locale/macos/SDL_syslocale.m" />
+            <file name="${SDL3_SRC}/process/posix/SDL_posixprocess.c" />
+            <file name="${SDL3_SRC}/tray/dummy/SDL_tray.c" />
+            <file name="${SDL3_SRC}/dialog/dummy/SDL_dummydialog.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenevents.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenframebuffer.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenopengles.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvideo.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvulkan.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenwindow.c" />
+        </section>
+
+        <section if="android">
+            <compilerflag value="-DSDL_LIBC" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_ANDROID" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_OFFSCREEN" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_AAUDIO" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_OPENSLES" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DISK" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_EGL" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_ES2" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_OGL_ES2" />
+            <compilerflag value="-DSDL_JOYSTICK_ANDROID" />
+            <compilerflag value="-DSDL_JOYSTICK_HIDAPI" />
+            <compilerflag value="-DSDL_HIDAPI_JOYSTICK" />
+            <compilerflag value="-DSDL_VIRTUAL_JOYSTICK" />
+            <compilerflag value="-DSDL_HAPTIC_ANDROID" />
+            <compilerflag value="-DSDL_CAMERA_DRIVER_ANDROID" />
+            <compilerflag value="-DSDL_SENSOR_ANDROID" />
+            <compilerflag value="-DSDL_LOADSO_DLOPEN" />
+            <compilerflag value="-DSDL_THREAD_PTHREAD" />
+            <compilerflag value="-DSDL_PTHREADS_SEM" />
+            <compilerflag value="-DSDL_TIMER_UNIX" />
+            <compilerflag value="-DSDL_TIME_UNIX" />
+            <compilerflag value="-DSDL_FILESYSTEM_ANDROID" />
+            <compilerflag value="-DSDL_FSOPS_POSIX" />
+            <compilerflag value="-DSDL_STORAGE_GENERIC" />
+            <compilerflag value="-DSDL_POWER_ANDROID" />
+            <compilerflag value="-DSDL_PROCESS_DUMMY" />
+            <file name="${SDL3_SRC}/core/android/SDL_android.c" />
+            <file name="${SDL3_SRC}/main/generic/SDL_sysmain_callbacks.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syscond.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysmutex.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_sysrwlock.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_syssem.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systhread.c" />
+            <file name="${SDL3_SRC}/thread/pthread/SDL_systls.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidclipboard.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidevents.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidgl.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidkeyboard.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidmessagebox.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidmouse.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidpen.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidtouch.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidvideo.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidvulkan.c" />
+            <file name="${SDL3_SRC}/video/android/SDL_androidwindow.c" />
+            <file name="${SDL3_SRC}/audio/aaudio/SDL_aaudio.c" />
+            <file name="${SDL3_SRC}/audio/openslES/SDL_openslES.c" />
+            <file name="${SDL3_SRC}/joystick/android/SDL_sysjoystick.c" />
+            <file name="${SDL3_SRC}/haptic/android/SDL_syshaptic.c" />
+            <file name="${SDL3_SRC}/camera/android/SDL_camera_android.c" />
+            <file name="${SDL3_SRC}/sensor/android/SDL_androidsensor.c" />
+            <file name="${SDL3_SRC}/power/android/SDL_syspower.c" />
+            <file name="${SDL3_SRC}/filesystem/android/SDL_sysfilesystem.c" />
+            <file name="${SDL3_SRC}/timer/unix/SDL_systimer.c" />
+            <file name="${SDL3_SRC}/time/unix/SDL_systime.c" />
+            <file name="${SDL3_SRC}/loadso/dlopen/SDL_sysloadso.c" />
+            <file name="${SDL3_SRC}/misc/android/SDL_sysurl.c" />
+            <file name="${SDL3_SRC}/locale/android/SDL_syslocale.c" />
+            <file name="${SDL3_SRC}/process/dummy/SDL_dummyprocess.c" />
+            <file name="${SDL3_SRC}/tray/dummy/SDL_tray.c" />
+            <file name="${SDL3_SRC}/dialog/android/SDL_androiddialog.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenevents.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenframebuffer.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenopengles.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvideo.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvulkan.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenwindow.c" />
+        </section>
+
+        <section if="emscripten">
+            <compilerflag value="-DHAVE_STDDEF_H" />
+            <compilerflag value="-DHAVE_STDINT_H" />
+            <compilerflag value="-DHAVE_STDLIB_H" />
+            <compilerflag value="-DHAVE_STRING_H" />
+            <compilerflag value="-DHAVE_STRINGS_H" />
+            <compilerflag value="-DHAVE_ERRNO_H" />
+            <compilerflag value="-DHAVE_STDIO_H" />
+            <compilerflag value="-DHAVE_LIMITS_H" />
+            <compilerflag value="-DHAVE_MALLOC_H" />
+            <compilerflag value="-DHAVE_ALLOCA_H" />
+            <compilerflag value="-DHAVE_UNISTD_H" />
+            <compilerflag value="-DHAVE_SYS_TYPES_H" />
+            <compilerflag value="-DHAVE_STDARG_H" />
+            <compilerflag value="-DHAVE_FLOAT_H" />
+            <compilerflag value="-DHAVE_MATH_H" />
+            <compilerflag value="-DHAVE_SIGNAL_H" />
+            <compilerflag value="-DHAVE_TIME_H" />
+            <compilerflag value="-DHAVE_SYS_TIME_H" />
+            <compilerflag value="-DHAVE_CTYPE_H" />
+            <compilerflag value="-DHAVE_WCHAR_H" />
+            <compilerflag value="-DHAVE_LOCALE_H" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_EMSCRIPTEN" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_DRIVER_OFFSCREEN" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_EMSCRIPTEN" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DISK" />
+            <compilerflag value="-DSDL_AUDIO_DRIVER_DUMMY" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_ES2" />
+            <compilerflag value="-DSDL_VIDEO_OPENGL_EGL" />
+            <compilerflag value="-DSDL_VIDEO_RENDER_OGL_ES2" />
+            <compilerflag value="-DSDL_JOYSTICK_EMSCRIPTEN" />
+            <compilerflag value="-DSDL_CAMERA_DRIVER_EMSCRIPTEN" />
+            <compilerflag value="-DSDL_SENSOR_EMSCRIPTEN" />
+            <compilerflag value="-DSDL_THREADS_DISABLED" />
+            <compilerflag value="-DSDL_THREAD_GENERIC_COND_SUFFIX" />
+            <compilerflag value="-DSDL_THREAD_GENERIC_RWLOCK_SUFFIX" />
+            <compilerflag value="-DSDL_TIMER_UNIX" />
+            <compilerflag value="-DSDL_TIME_UNIX" />
+            <compilerflag value="-DSDL_FILESYSTEM_EMSCRIPTEN" />
+            <compilerflag value="-DSDL_FSOPS_POSIX" />
+            <compilerflag value="-DSDL_STORAGE_GENERIC" />
+            <compilerflag value="-DSDL_POWER_EMSCRIPTEN" />
+            <compilerflag value="-DSDL_LOADSO_DUMMY" />
+            <compilerflag value="-DSDL_PROCESS_DUMMY" />
+            <compilerflag value="-Wno-unused-command-line-argument" />
+            <compilerflag value="-Wno-emcc" />
+
+            <file name="${SDL3_SRC}/thread/generic/SDL_syscond.c" />
+            <file name="${SDL3_SRC}/thread/generic/SDL_sysmutex.c" />
+            <file name="${SDL3_SRC}/thread/generic/SDL_sysrwlock.c" />
+            <file name="${SDL3_SRC}/thread/generic/SDL_syssem.c" />
+            <file name="${SDL3_SRC}/thread/generic/SDL_systhread.c" />
+            <file name="${SDL3_SRC}/thread/generic/SDL_systls.c" />
+            <file name="${SDL3_SRC}/main/emscripten/SDL_sysmain_callbacks.c" />
+            <file name="${SDL3_SRC}/main/emscripten/SDL_sysmain_runapp.c" />
+            <file name="${SDL3_SRC}/video/emscripten/SDL_emscriptenvideo.c" />
+            <file name="${SDL3_SRC}/video/emscripten/SDL_emscriptenevents.c" />
+            <file name="${SDL3_SRC}/video/emscripten/SDL_emscriptenopengles.c" />
+            <file name="${SDL3_SRC}/video/emscripten/SDL_emscriptenframebuffer.c" />
+            <file name="${SDL3_SRC}/video/emscripten/SDL_emscriptenmouse.c" />
+            <file name="${SDL3_SRC}/audio/emscripten/SDL_emscriptenaudio.c" />
+            <file name="${SDL3_SRC}/joystick/emscripten/SDL_sysjoystick.c" />
+            <file name="${SDL3_SRC}/camera/emscripten/SDL_camera_emscripten.c" />
+            <file name="${SDL3_SRC}/sensor/emscripten/SDL_emscriptensensor.c" />
+            <file name="${SDL3_SRC}/power/emscripten/SDL_syspower.c" />
+            <file name="${SDL3_SRC}/filesystem/emscripten/SDL_sysfilesystem.c" />
+            <file name="${SDL3_SRC}/timer/unix/SDL_systimer.c" />
+            <file name="${SDL3_SRC}/time/unix/SDL_systime.c" />
+            <file name="${SDL3_SRC}/loadso/dummy/SDL_sysloadso.c" />
+            <file name="${SDL3_SRC}/misc/emscripten/SDL_sysurl.c" />
+            <file name="${SDL3_SRC}/locale/emscripten/SDL_syslocale.c" />
+            <file name="${SDL3_SRC}/process/dummy/SDL_dummyprocess.c" />
+            <file name="${SDL3_SRC}/tray/dummy/SDL_tray.c" />
+            <file name="${SDL3_SRC}/dialog/dummy/SDL_dummydialog.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenevents.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenframebuffer.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenopengles.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvideo.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenvulkan.c" />
+            <file name="${SDL3_SRC}/video/offscreen/SDL_offscreenwindow.c" />
+        </section>
+    </files>
+
+    <files id="externs">
+        <compilerflag value="-Isrc" />
+        <compilerflag value="-I${SDL3_INCLUDE}" />
+        <compilerflag value="-I${HL_INCLUDE}" />
+
+        <file name="src/sdl_asyncio.cpp" />
+        <file name="src/sdl_audio.cpp" />
+        <file name="src/sdl_camera.cpp" />
+        <file name="src/sdl_clipboard.cpp" />
+        <file name="src/sdl_dialog.cpp" />
+        <file name="src/sdl_error.cpp" />
+        <file name="src/sdl_events.cpp" />
+        <file name="src/sdl_filesystem.cpp" />
+        <file name="src/sdl_gamepad.cpp" />
+        <file name="src/sdl_haptic.cpp" />
+        <file name="src/sdl_hidapi.cpp" />
+        <file name="src/sdl_hints.cpp" />
+        <file name="src/sdl_init.cpp" />
+        <file name="src/sdl_iostream.cpp" />
+        <file name="src/sdl_joystick.cpp" />
+        <file name="src/sdl_keyboard.cpp" />
+        <file name="src/sdl_keycode.cpp" />
+        <file name="src/sdl_loadso.cpp" />
+        <file name="src/sdl_locale.cpp" />
+        <file name="src/sdl_log.cpp" />
+        <file name="src/sdl_messagebox.cpp" />
+        <file name="src/sdl_misc.cpp" />
+        <file name="src/sdl_mouse.cpp" />
+        <file name="src/sdl_mutex.cpp" />
+        <file name="src/sdl_pen.cpp" />
+        <file name="src/sdl_pixels.cpp" />
+        <file name="src/sdl_platform.cpp" />
+        <file name="src/sdl_power.cpp" />
+        <file name="src/sdl_process.cpp" />
+        <file name="src/sdl_properties.cpp" />
+        <file name="src/sdl_rect.cpp" />
+        <file name="src/sdl_render.cpp" />
+        <file name="src/sdl_sensor.cpp" />
+        <file name="src/sdl_storage.cpp" />
+        <file name="src/sdl_surface.cpp" />
+        <file name="src/sdl_system.cpp" />
+        <file name="src/sdl_thread.cpp" />
+        <file name="src/sdl_time.cpp" />
+        <file name="src/sdl_timer.cpp" />
+        <file name="src/sdl_touch.cpp" />
+        <file name="src/sdl_tray.cpp" />
+        <file name="src/sdl_version.cpp" />
+        <file name="src/sdl_video.cpp" />
+    </files>
+
+    <set name="OUT_ARCH" value="unknown" />
+
+    <section if="windows">
+        <set name="OUT_ARCH" value="Windows64" />
+        <section unless="HXCPP_M64">
+            <error
+                value="Compiling HDLL requires 64 bits. Compile with: haxelib run hxcpp Build.xml -DHXCPP_M64" />
+        </section>
+    </section>
+
+    <section if="linux">
+        <set name="OUT_ARCH" value="Linux64" />
+        <section if="HXCPP_M32">
+            <set name="OUT_ARCH" value="Linux32" />
+            <compilerflag value="-m32" />
+            <linkerflag value="-m32" />
+        </section>
+        <section if="HXCPP_ARM64">
+            <set name="OUT_ARCH" value="LinuxArm64" />
+        </section>
+    </section>
+
+    <section if="mac">
+        <set name="OUT_ARCH" value="Mac64" />
+        <section if="HXCPP_ARM64">
+            <set name="OUT_ARCH" value="MacArm64" />
+        </section>
+    </section>
+
+    <section if="emscripten">
+        <set name="OUT_ARCH" value="WebAssembly" />
+    </section>
+
+    <target id="sdl3-shared" output="sdl3" tool="linker" toolid="dll">
+        <ext value=".hdll" />
+        <files id="sdl3" />
+        <files id="externs" />
+        <outdir name="binaries/${OUT_ARCH}" />
+
+        <section if="windows">
+            <compilerflag value="-DDLL_EXPORT" />
+        </section>
+
+        <section if="linux">
+            <compilerflag value="-fPIC" />
+            <section if="HXCPP_M64">
+                <compilerflag value="-m64" />
+            </section>
+            <section if="HXCPP_M32">
+                <compilerflag value="-m32" />
+            </section>
+        </section>
+        <section if="android">
+            <compilerflag value="-fPIC" />
+        </section>
+        <section if="ios">
+            <section if="HXCPP_ARM64">
+                <compilerflag value="-arch arm64" />
+            </section>
+            <section if="HXCPP_ARMV7">
+                <compilerflag value="-arch armv7" />
+            </section>
+        </section>
+
+        <section if="windows">
+            <lib name="obj/lib/libhl.lib" />
+            <lib name="user32.lib" />
+            <lib name="gdi32.lib" />
+            <lib name="winmm.lib" />
+            <lib name="imm32.lib" />
+            <lib name="ole32.lib" />
+            <lib name="oleaut32.lib" />
+            <lib name="version.lib" />
+            <lib name="uuid.lib" />
+            <lib name="setupapi.lib" />
+            <lib name="advapi32.lib" />
+            <lib name="shell32.lib" />
+            <lib name="dinput8.lib" />
+        </section>
+
+        <section if="linux">
+            <lib name="-lX11" />
+            <lib name="-lpthread" />
+            <lib name="-ldl" />
+            <lib name="-lasound" />
+            <lib name="-lm" />
+        </section>
+
+        <section if="mac">
+            <vflag value="-framework" name="Cocoa" />
+            <vflag value="-framework" name="IOKit" />
+            <vflag value="-framework" name="ForceFeedback" />
+            <vflag value="-framework" name="CoreAudio" />
+            <vflag value="-framework" name="AudioToolbox" />
+            <vflag value="-framework" name="CoreVideo" />
+            <vflag value="-framework" name="AVFoundation" />
+            <vflag value="-framework" name="Foundation" />
+            <vflag value="-framework" name="GameController" />
+            <vflag value="-framework" name="Carbon" />
+            <vflag value="-framework" name="QuartzCore" />
+            <vflag value="-framework" name="Metal" />
+        </section>
+
+        <section if="ios">
+            <vflag value="-framework" name="UIKit" />
+            <vflag value="-framework" name="Foundation" />
+            <vflag value="-framework" name="CoreAudio" />
+            <vflag value="-framework" name="AudioToolbox" />
+            <vflag value="-framework" name="CoreGraphics" />
+            <vflag value="-framework" name="CoreMotion" />
+            <vflag value="-framework" name="QuartzCore" />
+            <vflag value="-framework" name="GameController" />
+            <vflag value="-framework" name="CoreHaptics" />
+            <vflag value="-framework" name="Metal" />
+            <vflag value="-framework" name="OpenGLES" />
+            <vflag value="-framework" name="AVFoundation" />
+            <vflag value="-framework" name="CoreVideo" />
+        </section>
+
+        <section if="android">
+            <lib name="-llog" />
+            <lib name="-landroid" />
+            <lib name="-laaudio" />
+            <lib name="-lOpenSLES" />
+            <lib name="-lEGL" />
+            <lib name="-lGLESv1_CM" />
+            <lib name="-lGLESv2" />
+            <lib name="-ldl" />
+            <lib name="-lm" />
+        </section>
+    </target>
+
+    <target id="sdl3-static" output="sdl3" tool="linker" toolid="static_link">
+        <section if="windows">
+            <ext value=".lib" />
+        </section>
+        <section unless="windows">
+            <ext value=".a" />
+        </section>
+        <files id="sdl3" />
+        <files id="externs" />
+        <outdir name="binaries/${OUT_ARCH}" />
+        <compilerflag value="-DSDL_STATIC_LIB" />
+
+        <section if="linux">
+            <section if="HXCPP_M64">
+                <compilerflag value="-m64" />
+            </section>
+            <section if="HXCPP_M32">
+                <compilerflag value="-m32" />
+            </section>
+        </section>
+        <section if="ios">
+            <section if="HXCPP_ARM64">
+                <compilerflag value="-arch arm64" />
+            </section>
+            <section if="HXCPP_ARMV7">
+                <compilerflag value="-arch armv7" />
+            </section>
+        </section>
+
+        <section if="windows">
+            <lib name="user32.lib" />
+            <lib name="gdi32.lib" />
+            <lib name="winmm.lib" />
+            <lib name="imm32.lib" />
+            <lib name="ole32.lib" />
+            <lib name="oleaut32.lib" />
+            <lib name="version.lib" />
+            <lib name="uuid.lib" />
+            <lib name="setupapi.lib" />
+            <lib name="advapi32.lib" />
+            <lib name="shell32.lib" />
+            <lib name="dinput8.lib" />
+        </section>
+
+        <section if="linux">
+            <lib name="-lX11" />
+            <lib name="-lpthread" />
+            <lib name="-ldl" />
+            <lib name="-lasound" />
+            <lib name="-lm" />
+        </section>
+
+        <section if="mac">
+            <vflag value="-framework" name="Cocoa" />
+            <vflag value="-framework" name="IOKit" />
+            <vflag value="-framework" name="ForceFeedback" />
+            <vflag value="-framework" name="CoreAudio" />
+            <vflag value="-framework" name="AudioToolbox" />
+            <vflag value="-framework" name="CoreVideo" />
+            <vflag value="-framework" name="AVFoundation" />
+            <vflag value="-framework" name="Foundation" />
+            <vflag value="-framework" name="GameController" />
+            <vflag value="-framework" name="Carbon" />
+            <vflag value="-framework" name="QuartzCore" />
+            <vflag value="-framework" name="Metal" />
+        </section>
+
+        <section if="ios">
+            <vflag value="-framework" name="UIKit" />
+            <vflag value="-framework" name="Foundation" />
+            <vflag value="-framework" name="CoreAudio" />
+            <vflag value="-framework" name="AudioToolbox" />
+            <vflag value="-framework" name="CoreGraphics" />
+            <vflag value="-framework" name="CoreMotion" />
+            <vflag value="-framework" name="QuartzCore" />
+            <vflag value="-framework" name="GameController" />
+            <vflag value="-framework" name="CoreHaptics" />
+            <vflag value="-framework" name="Metal" />
+            <vflag value="-framework" name="OpenGLES" />
+            <vflag value="-framework" name="AVFoundation" />
+            <vflag value="-framework" name="CoreVideo" />
+        </section>
+
+        <section if="android">
+            <lib name="-llog" />
+            <lib name="-landroid" />
+            <lib name="-laaudio" />
+            <lib name="-lOpenSLES" />
+            <lib name="-lEGL" />
+            <lib name="-lGLESv1_CM" />
+            <lib name="-lGLESv2" />
+            <lib name="-ldl" />
+            <lib name="-lm" />
+        </section>
+    </target>
+
+    <section if="emscripten">
+        <target id="default" output="sdl3_static" tool="linker" toolid="static_link">
+            <ext value=".a" />
+            <files id="sdl3" />
+            <files id="externs" />
+            <outdir name="binaries/${OUT_ARCH}" />
+            <compilerflag value="-DSDL_STATIC_LIB" />
+            <compilerflag value="-sASYNCIFY" />
+            <compilerflag value="-sALLOW_MEMORY_GROWTH=1" />
+        </target>
+    </section>
+
+    <section if="STATIC_HDLL">
+        <section unless="emscripten">
+            <target id="default" output="sdl3_static" tool="linker" toolid="static_link">
+                <section if="windows">
+                    <ext value=".lib" />
+                </section>
+                <section unless="windows">
+                    <ext value=".a" />
+                </section>
+                <files id="sdl3" />
+                <files id="externs" />
+                <outdir name="binaries/${OUT_ARCH}" />
+                <compilerflag value="-DSDL_STATIC_LIB" />
+
+                <section if="linux">
+                    <section if="HXCPP_M64">
+                        <compilerflag value="-m64" />
+                    </section>
+                    <section if="HXCPP_M32">
+                        <compilerflag value="-m32" />
+                    </section>
+                </section>
+                <section if="ios">
+                    <section if="HXCPP_ARM64">
+                        <compilerflag value="-arch arm64" />
+                    </section>
+                    <section if="HXCPP_ARMV7">
+                        <compilerflag value="-arch armv7" />
+                    </section>
+                </section>
+
+                <section if="windows">
+                    <lib name="user32.lib" />
+                    <lib name="gdi32.lib" />
+                    <lib name="winmm.lib" />
+                    <lib name="imm32.lib" />
+                    <lib name="ole32.lib" />
+                    <lib name="oleaut32.lib" />
+                    <lib name="version.lib" />
+                    <lib name="uuid.lib" />
+                    <lib name="setupapi.lib" />
+                    <lib name="advapi32.lib" />
+                    <lib name="shell32.lib" />
+                    <lib name="dinput8.lib" />
+                </section>
+
+                <section if="linux">
+                    <lib name="-lX11" />
+                    <lib name="-lpthread" />
+                    <lib name="-ldl" />
+                    <lib name="-lasound" />
+                    <lib name="-lm" />
+                </section>
+
+                <section if="mac">
+                    <vflag value="-framework" name="Cocoa" />
+                    <vflag value="-framework" name="IOKit" />
+                    <vflag value="-framework" name="ForceFeedback" />
+                    <vflag value="-framework" name="CoreAudio" />
+                    <vflag value="-framework" name="AudioToolbox" />
+                    <vflag value="-framework" name="CoreVideo" />
+                    <vflag value="-framework" name="AVFoundation" />
+                    <vflag value="-framework" name="Foundation" />
+                    <vflag value="-framework" name="GameController" />
+                    <vflag value="-framework" name="Carbon" />
+                    <vflag value="-framework" name="QuartzCore" />
+                    <vflag value="-framework" name="Metal" />
+                </section>
+
+                <section if="ios">
+                    <vflag value="-framework" name="UIKit" />
+                    <vflag value="-framework" name="Foundation" />
+                    <vflag value="-framework" name="CoreAudio" />
+                    <vflag value="-framework" name="AudioToolbox" />
+                    <vflag value="-framework" name="CoreGraphics" />
+                    <vflag value="-framework" name="CoreMotion" />
+                    <vflag value="-framework" name="QuartzCore" />
+                    <vflag value="-framework" name="GameController" />
+                    <vflag value="-framework" name="CoreHaptics" />
+                    <vflag value="-framework" name="Metal" />
+                    <vflag value="-framework" name="OpenGLES" />
+                    <vflag value="-framework" name="AVFoundation" />
+                    <vflag value="-framework" name="CoreVideo" />
+                </section>
+
+                <section if="android">
+                    <lib name="-llog" />
+                    <lib name="-landroid" />
+                    <lib name="-laaudio" />
+                    <lib name="-lOpenSLES" />
+                    <lib name="-lEGL" />
+                    <lib name="-lGLESv1_CM" />
+                    <lib name="-lGLESv2" />
+                    <lib name="-ldl" />
+                    <lib name="-lm" />
+                </section>
+            </target>
+        </section>
+    </section>
+
+    <section unless="STATIC_HDLL">
+        <section unless="emscripten">
+            <target id="default" output="sdl3" tool="linker" toolid="dll">
+                <ext value=".hdll" />
+                <files id="sdl3" />
+                <files id="externs" />
+                <outdir name="binaries/${OUT_ARCH}" />
+
+                <section if="windows">
+                    <compilerflag value="-DDLL_EXPORT" />
+                </section>
+
+                <section if="linux">
+                    <compilerflag value="-fPIC" />
+                    <section if="HXCPP_M64">
+                        <compilerflag value="-m64" />
+                    </section>
+                    <section if="HXCPP_M32">
+                        <compilerflag value="-m32" />
+                    </section>
+                </section>
+                <section if="android">
+                    <compilerflag value="-fPIC" />
+                </section>
+                <section if="ios">
+                    <section if="HXCPP_ARM64">
+                        <compilerflag value="-arch arm64" />
+                    </section>
+                    <section if="HXCPP_ARMV7">
+                        <compilerflag value="-arch armv7" />
+                    </section>
+                </section>
+
+                <section if="windows">
+                    <lib name="obj/lib/libhl.lib" />
+                    <lib name="user32.lib" />
+                    <lib name="gdi32.lib" />
+                    <lib name="winmm.lib" />
+                    <lib name="imm32.lib" />
+                    <lib name="ole32.lib" />
+                    <lib name="oleaut32.lib" />
+                    <lib name="version.lib" />
+                    <lib name="uuid.lib" />
+                    <lib name="setupapi.lib" />
+                    <lib name="advapi32.lib" />
+                    <lib name="shell32.lib" />
+                    <lib name="dinput8.lib" />
+                </section>
+
+                <section if="linux">
+                    <lib name="-lX11" />
+                    <lib name="-lpthread" />
+                    <lib name="-ldl" />
+                    <lib name="-lasound" />
+                    <lib name="-lm" />
+                </section>
+
+                <section if="mac">
+                    <vflag value="-framework" name="Cocoa" />
+                    <vflag value="-framework" name="IOKit" />
+                    <vflag value="-framework" name="ForceFeedback" />
+                    <vflag value="-framework" name="CoreAudio" />
+                    <vflag value="-framework" name="AudioToolbox" />
+                    <vflag value="-framework" name="CoreVideo" />
+                    <vflag value="-framework" name="AVFoundation" />
+                    <vflag value="-framework" name="Foundation" />
+                    <vflag value="-framework" name="GameController" />
+                    <vflag value="-framework" name="Carbon" />
+                    <vflag value="-framework" name="QuartzCore" />
+                    <vflag value="-framework" name="Metal" />
+                </section>
+
+                <section if="ios">
+                    <vflag value="-framework" name="UIKit" />
+                    <vflag value="-framework" name="Foundation" />
+                    <vflag value="-framework" name="CoreAudio" />
+                    <vflag value="-framework" name="AudioToolbox" />
+                    <vflag value="-framework" name="CoreGraphics" />
+                    <vflag value="-framework" name="CoreMotion" />
+                    <vflag value="-framework" name="QuartzCore" />
+                    <vflag value="-framework" name="GameController" />
+                    <vflag value="-framework" name="CoreHaptics" />
+                    <vflag value="-framework" name="Metal" />
+                    <vflag value="-framework" name="OpenGLES" />
+                    <vflag value="-framework" name="AVFoundation" />
+                    <vflag value="-framework" name="CoreVideo" />
+                </section>
+
+                <section if="android">
+                    <lib name="-llog" />
+                    <lib name="-landroid" />
+                    <lib name="-laaudio" />
+                    <lib name="-lOpenSLES" />
+                    <lib name="-lEGL" />
+                    <lib name="-lGLESv1_CM" />
+                    <lib name="-lGLESv2" />
+                    <lib name="-ldl" />
+                    <lib name="-lm" />
+                </section>
+            </target>
+        </section>
+    </section>
+</xml>

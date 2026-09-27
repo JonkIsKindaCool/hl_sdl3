@@ -1,0 +1,23 @@
+{
+    "name": "hl_sdl3",
+    "url": "https://github.com/JonkIsKindaCool/hl_glfw",
+    "license": "MIT",
+    "tags": [
+        "window",
+        "glfw",
+        "hashlink",
+        "game",
+        "haxe",
+        "extern"
+    ],
+    "description": "Hashlink bindings and wrappers for hashlink.",
+    "version": "1.1.0",
+    "classPath": "src/",
+    "releasenote": "Static library support.",
+    "contributors": [
+        "JonkIsKindaCool"
+    ],
+    "dependencies": {
+        "hxcpp": ""
+    }
+}
