@@ -35,7 +35,7 @@
    updated SDL can transparently take advantage of them, but your program will
    not without this feature. Think hard before turning it off.
 */
-#ifdef SDL_DYNAMIC_API // Tried to force it on the command line?
+#ifdef SDL_DYNAMIC_API 
 #error Nope, you have to edit this file to force this off.
 #endif
 
