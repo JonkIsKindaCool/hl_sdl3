@@ -1,6 +1,6 @@
 package hl.bindings.sdl3;
 
-typedef SDLHapticPtr = hl.Abstract<"SDL_Haptic">;
+@:noDoc typedef SDLHapticPtr = hl.Abstract<"SDL_Haptic">;
 
 /**
  * The type of a haptic effect.

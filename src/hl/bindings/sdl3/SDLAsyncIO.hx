@@ -4,12 +4,15 @@ import haxe.Int64;
 import haxe.io.Bytes;
 
 @:noCompletion
+@:noDoc
 typedef SDLAsyncIOPtr = hl.Abstract<"SDL_AsyncIO">;
 
 @:noCompletion
+@:noDoc
 typedef SDLAsyncIOQueuePtr = hl.Abstract<"SDL_AsyncIOQueue">;
 
 @:noCompletion
+@:noDoc
 typedef SDLAsyncIOOutcomePtr = hl.Abstract<"SDL_AsyncIOOutcome">;
 
 /**
@@ -275,7 +278,7 @@ class SDLAsyncIOQueue {
  * A handle for asynchronous I/O operations on a file.
  * Corresponds to `SDL_AsyncIO` in SDL3.
  */
-class AsyncIO {
+class SDLAsyncIO {
 	var ptr:SDLAsyncIOPtr;
 
 	/** The queue associated with this object. */
@@ -294,10 +297,10 @@ class AsyncIO {
 	 * @param queue The queue to associate tasks with.
 	 * @return A new instance, or `null` on failure.
 	 */
-	public static function open(path:String, mode:String, queue:SDLAsyncIOQueue):Null<AsyncIO> {
+	public static function open(path:String, mode:String, queue:SDLAsyncIOQueue):Null<SDLAsyncIO> {
 		@:privateAccess
 		var p = SDLAsyncIONative.fromFile(path.toUtf8(), mode.toUtf8());
-		return p == null ? null : new AsyncIO(p, queue);
+		return p == null ? null : new SDLAsyncIO(p, queue);
 	}
 
 	/**

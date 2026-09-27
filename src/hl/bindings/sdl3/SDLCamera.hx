@@ -3,10 +3,10 @@ package hl.bindings.sdl3;
 import haxe.Int64;
 import haxe.io.Bytes;
 
-typedef SDLCameraPtr = hl.Abstract<"SDL_Camera">;
-typedef SDLCameraSpecPtr = hl.Abstract<"SDL_CameraSpec">;
-typedef SDLCameraTimestampPtr = hl.Abstract<"SDL_CameraTimestamp">;
-typedef SDLCameraSurfacePtr = hl.Abstract<"SDL_Surface">;
+@:noDoc typedef SDLCameraPtr = hl.Abstract<"SDL_Camera">;
+@:noDoc typedef SDLCameraSpecPtr = hl.Abstract<"SDL_CameraSpec">;
+@:noDoc typedef SDLCameraTimestampPtr = hl.Abstract<"SDL_CameraTimestamp">;
+@:noDoc typedef SDLCameraSurfacePtr = hl.Abstract<"SDL_Surface">;
 
 /**
  * The physical position of a camera.

@@ -3,7 +3,7 @@ package hl.bindings.sdl3;
 import haxe.Int64;
 import haxe.io.Bytes;
 
-typedef SDLGamepadPtr = hl.Abstract<"SDL_Gamepad">;
+@:noDoc typedef SDLGamepadPtr = hl.Abstract<"SDL_Gamepad">;
 
 /**
  * The type or family of a gamepad.

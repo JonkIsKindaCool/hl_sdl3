@@ -125,6 +125,7 @@ class SDLAudioSpec {
 }
 
 @:noCompletion
+@:noDoc
 class SDLAudioNative {
 	@:hlNative("sdl3", "get_error") public static function getError():hl.Bytes
 		return null;

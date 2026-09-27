@@ -2,6 +2,7 @@ package hl.bindings.sdl3;
 
 import haxe.io.Bytes;
 
+@:noDoc
 typedef SDLClipboardBlobPtr = hl.Abstract<"SDL_ClipboardBlob">;
 
 @:noCompletion

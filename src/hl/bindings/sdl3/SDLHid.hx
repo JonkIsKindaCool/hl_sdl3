@@ -1,7 +1,7 @@
 package hl.bindings.sdl3;
 
-typedef SDLHidDevicePtr = hl.Abstract<"SDL_hid_device">;
-typedef SDLHidDeviceInfoListPtr = hl.Abstract<"SDL_HidDeviceInfoList">;
+@:noDoc typedef SDLHidDevicePtr = hl.Abstract<"SDL_hid_device">;
+@:noDoc typedef SDLHidDeviceInfoListPtr = hl.Abstract<"SDL_HidDeviceInfoList">;
 
 /**
  * The bus a HID device is connected through.
